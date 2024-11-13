@@ -32,9 +32,6 @@ function QuestionForm({ addNewQuestion }) {
       }),
     })
       
-
-
-
     // Reset form
     setFormData({
       prompt: "",

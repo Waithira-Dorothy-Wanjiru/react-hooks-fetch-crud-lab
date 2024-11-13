@@ -8,17 +8,13 @@ function App() {
   const [questions, setQuestions] = useState([]);
 
   function handleAddQuestion(newQuestion) {
-    setQuestions([...questions, newQuestion]);
+    setQuestions((prevQuestions) => [...prevQuestions, newQuestion]);
   }
 
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />
-      {page === "Form" ? (
-        <QuestionForm onAddQuestion={handleAddQuestion} />
-      ) : (
-        <QuestionList questions={questions} />
-      )}
+      {page === "Form" ? <QuestionForm  onAddQuestion={handleAddQuestion} /> : <QuestionList questions={questions}/>}
     </main>
   );
 }
